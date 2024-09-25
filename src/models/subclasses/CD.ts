@@ -26,7 +26,14 @@ export class CD extends Midia implements Localizavel {
         console.table(biblioteca.cds[total])
     }
 
-    mostrarCds() {
+    static mostrarCds() {
+        console.table(biblioteca.cds)
+    }
+
+    static deletarCd(idDelete: number){
+        biblioteca.cds = biblioteca.cds.filter(item => {
+            return item.id !== Number(idDelete)
+        });
         console.table(biblioteca.cds)
     }
 }

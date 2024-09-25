@@ -28,16 +28,13 @@ Sua opcao: `);
                     cd1.addCd();
                     break;
                 case '2':
-                    console.table(bd_1.biblioteca.cds);
+                    CD_1.CD.mostrarCds();
                     break;
                 case '3':
                     console.table(bd_1.biblioteca.cds);
                     const cddelete = readline_sync_1.default.question(`
 Qual o ID do CD que voce deseja remover?: `);
-                    bd_1.biblioteca.cds = bd_1.biblioteca.cds.filter(item => {
-                        return item.id !== Number(cddelete);
-                    });
-                    console.table(bd_1.biblioteca.cds);
+                    CD_1.CD.deletarCd(Number(cddelete));
                     break;
             }
             break;

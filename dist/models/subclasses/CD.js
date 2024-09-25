@@ -24,7 +24,13 @@ class CD extends Midia_1.Midia {
         console.table(`${this.titulo} adicionado com sucesso.`);
         console.table(bd_1.biblioteca.cds[total]);
     }
-    mostrarCds() {
+    static mostrarCds() {
+        console.table(bd_1.biblioteca.cds);
+    }
+    static deletarCd(idDelete) {
+        bd_1.biblioteca.cds = bd_1.biblioteca.cds.filter(item => {
+            return item.id !== Number(idDelete);
+        });
         console.table(bd_1.biblioteca.cds);
     }
 }

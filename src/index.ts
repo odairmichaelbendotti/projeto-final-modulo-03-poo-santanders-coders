@@ -28,17 +28,14 @@ Sua opcao: `)
                     cd1.addCd()
                     break
                 case '2':
-                    console.table(biblioteca.cds)
+                    CD.mostrarCds()
                     break
                 case '3':
                     console.table(biblioteca.cds)
                     const cddelete = readline.question(`
 Qual o ID do CD que voce deseja remover?: `)
 
-                    biblioteca.cds = biblioteca.cds.filter(item => {
-                        return item.id !== Number(cddelete)
-                    });
-                    console.table(biblioteca.cds)
+                    CD.deletarCd(Number(cddelete))
                     break
             }
             break
