@@ -1,6 +1,4 @@
-import { ItemAcervo, Livro, Revista, CD, DVD, BibliotecaType } from "../classes/Types";
-  
-  export const biblioteca: BibliotecaType = {
+  export const biblioteca = {
     livros: [
       {
         id: 1,
@@ -31,12 +29,28 @@ import { ItemAcervo, Livro, Revista, CD, DVD, BibliotecaType } from "../classes/
     ],
     cds: [
       {
-        id: 4,
-        titulo: "Greatest Hits",
-        localizacao: "Estante D, Prateleira 4",
-        duracao: 45,
-        artista: "The Rock Band",
-        disponivel: true
+        id: 1,
+        anoPublicacao: 2010,
+        titulo: "Xuxaxa",
+        duracao: 60,
+        faixas: 2,
+        localizacao: 'estante'
+      },
+      {
+        id: 2,
+        anoPublicacao: 2010,
+        titulo: "Xuxaxa",
+        duracao: 60,
+        faixas: 2,
+        localizacao: 'estante'
+      },
+      {
+        id: 3,
+        anoPublicacao: 2010,
+        titulo: "Xuxaxa",
+        duracao: 60,
+        faixas: 2,
+        localizacao: 'estante'
       }
     ],
     dvds: [

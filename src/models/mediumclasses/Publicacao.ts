@@ -1,6 +1,4 @@
 import { ItemAcervo } from "../abstractclass/AItemAcervo";
-
-
 export class Publicacao extends ItemAcervo{
 
     protected numeroDePaginas:number = 0;
@@ -9,8 +7,5 @@ export class Publicacao extends ItemAcervo{
         super(anoPublicacao, titulo);
         this.numeroDePaginas = numeroDePaginas;
     }
-
-    
-
 }
 

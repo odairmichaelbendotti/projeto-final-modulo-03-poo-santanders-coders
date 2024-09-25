@@ -1,8 +1,6 @@
 import { Localizavel } from "../interfaces/ILocalizavel";
 import { Publicacao } from "../mediumclasses/Publicacao";
 
-
-
 export class Revista extends Publicacao implements Localizavel{
 
     editora: string = "";
