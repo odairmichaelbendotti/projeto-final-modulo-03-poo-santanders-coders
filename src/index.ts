@@ -1,7 +1,7 @@
 import readline from 'readline-sync';
 
+import { biblioteca } from './database/bd';
 import { CD } from "./models/subclasses/CD";
-import { biblioteca } from './bd/bd';
 
 let opcao: string = ''
 
