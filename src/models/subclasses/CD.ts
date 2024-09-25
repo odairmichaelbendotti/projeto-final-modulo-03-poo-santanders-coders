@@ -1,7 +1,7 @@
+import readline from 'readline-sync';
+import { biblioteca } from "../../database/bd";
 import { Localizavel } from "../interfaces/ILocalizavel";
 import { Midia } from "../mediumclasses/Midia";
-import { biblioteca } from "../../bd/bd";
-import readline from 'readline-sync';
 
 export class CD extends Midia implements Localizavel {
     faixas: number = 0;
