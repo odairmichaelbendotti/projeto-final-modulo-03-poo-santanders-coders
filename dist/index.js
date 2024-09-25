@@ -36,6 +36,11 @@ Sua opcao: `);
 Qual o ID do CD que voce deseja remover?: `);
                     CD_1.CD.deletarCd(Number(cddelete));
                     break;
+                case '4':
+                    console.table(bd_1.biblioteca.cds);
+                    let editar = Number(readline_sync_1.default.question(`
+ID do item que sera editado: `));
+                    CD_1.CD.editarCd(editar);
             }
             break;
     }

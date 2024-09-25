@@ -37,9 +37,13 @@ Qual o ID do CD que voce deseja remover?: `)
 
                     CD.deletarCd(Number(cddelete))
                     break
+                case '4':
+                    console.table(biblioteca.cds)
+                    let editar = Number(readline.question(`
+ID do item que sera editado: `))
+                    CD.editarCd(editar)
             }
             break
-
     }
 }
 // import { DVD } from "./models/subclasses/DVD";
