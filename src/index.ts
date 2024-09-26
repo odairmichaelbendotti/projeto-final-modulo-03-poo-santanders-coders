@@ -18,13 +18,19 @@ Sua opcao: `)
 Sua opcao: `)
             switch (cd) {
                 case '1':
-                    const anoPublicacao = readline.question(`Ano da publicacao: `)
+                    const anoPublicacao = readline.questionInt(`Ano da publicacao: `)
                     const titulo = readline.question(`Titulo: `)
-                    const duracao = readline.question(`Tempo de duracao: `)
-                    const faixas = readline.question('Numero de faixas: ')
+                    const duracao = readline.questionInt(`Tempo de duracao(minutos): `)
+                    const faixas = readline.questionInt('Numero de faixas: ')
                     const localizacao = readline.question('Informe a localizao: ')
 
-                    const cd1 = new CD(Number(anoPublicacao), titulo, Number(duracao), Number(faixas), localizacao)
+                    if(anoPublicacao <= 0 || titulo.trim() === '' || duracao < 0 || faixas < 0 || localizacao.trim() === ''){
+                        console.log('Informações inválidas! Preencha todos o campos com valores válidos.')
+                        break
+                    }
+
+                    const cd1 = new CD(anoPublicacao, titulo, duracao, faixas, localizacao)
+
                     cd1.addCd()
                     break
                 case '2':
@@ -32,15 +38,31 @@ Sua opcao: `)
                     break
                 case '3':
                     console.table(biblioteca.cds)
-                    const cddelete = readline.question(`
+                    if(biblioteca.cds.length === 0){
+                        console.log('Não há itens para remover!')
+                        break
+                    }
+                    const cddelete = readline.questionInt(`
 Qual o ID do CD que voce deseja remover?: `)
 
-                    CD.deletarCd(Number(cddelete))
+                    if(cddelete <= 0){
+                        console.log('ID inválido!')
+                        break
+                    }
+
+                    const index = biblioteca.cds.findIndex((cd) => cd.id === cddelete);
+
+                    if(index === -1){
+                        console.log('CD não encontrado!')
+                        break
+                    }
+
+                    CD.deletarCd(cddelete)
                     break
                 case '4':
                     console.table(biblioteca.cds)
-                    let editar = Number(readline.question(`
-ID do item que sera editado: `))
+                    let editar = readline.questionInt(`
+ID do item que sera editado: `)
                     CD.editarCd(editar)
             }
             break

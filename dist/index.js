@@ -19,12 +19,16 @@ Sua opcao: `);
 Sua opcao: `);
             switch (cd) {
                 case '1':
-                    const anoPublicacao = readline_sync_1.default.question(`Ano da publicacao: `);
+                    const anoPublicacao = readline_sync_1.default.questionInt(`Ano da publicacao: `);
                     const titulo = readline_sync_1.default.question(`Titulo: `);
-                    const duracao = readline_sync_1.default.question(`Tempo de duracao: `);
-                    const faixas = readline_sync_1.default.question('Numero de faixas: ');
+                    const duracao = readline_sync_1.default.questionInt(`Tempo de duracao(minutos): `);
+                    const faixas = readline_sync_1.default.questionInt('Numero de faixas: ');
                     const localizacao = readline_sync_1.default.question('Informe a localizao: ');
-                    const cd1 = new CD_1.CD(Number(anoPublicacao), titulo, Number(duracao), Number(faixas), localizacao);
+                    if (anoPublicacao <= 0 || titulo.trim() === '' || duracao < 0 || faixas < 0 || localizacao.trim() === '') {
+                        console.log('Informações inválidas! Preencha todos o campos com valores válidos.');
+                        break;
+                    }
+                    const cd1 = new CD_1.CD(anoPublicacao, titulo, duracao, faixas, localizacao);
                     cd1.addCd();
                     break;
                 case '2':
@@ -32,9 +36,22 @@ Sua opcao: `);
                     break;
                 case '3':
                     console.table(bd_1.biblioteca.cds);
-                    const cddelete = readline_sync_1.default.question(`
+                    if (bd_1.biblioteca.cds.length === 0) {
+                        console.log('Não há itens para remover!');
+                        break;
+                    }
+                    const cddelete = readline_sync_1.default.questionInt(`
 Qual o ID do CD que voce deseja remover?: `);
-                    CD_1.CD.deletarCd(Number(cddelete));
+                    if (cddelete <= 0) {
+                        console.log('ID inválido!');
+                        break;
+                    }
+                    const index = bd_1.biblioteca.cds.findIndex((cd) => cd.id === cddelete);
+                    if (index === -1) {
+                        console.log('CD não encontrado!');
+                        break;
+                    }
+                    CD_1.CD.deletarCd(cddelete);
                     break;
                 case '4':
                     console.table(bd_1.biblioteca.cds);
