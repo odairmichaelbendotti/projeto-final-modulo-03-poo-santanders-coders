@@ -4,9 +4,10 @@
   "description": "Este projeto consiste em desenvolver uma aplicação web que simula o sistema de gerenciamento de uma biblioteca , utilizando TypeScript para garantir a tipagem estática e organização do código.",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
     "nodemon": "nodemon ./src/index.ts",
-    "dev": "node ./dist/index.js"
+    "build": "tsc",
+    "start": "node public/index.js",
+    "dev": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
