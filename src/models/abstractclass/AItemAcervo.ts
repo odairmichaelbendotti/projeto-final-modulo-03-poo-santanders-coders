@@ -1,5 +1,5 @@
 export abstract class ItemAcervo {
-    id: number = 0;
+    ID: number = 0;
     anoPublicacao: number = 0;
     titulo: string = "";
     disponiblidade:boolean = true;
