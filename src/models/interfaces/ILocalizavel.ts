@@ -1,5 +1,5 @@
 export interface Localizavel{
-    localizacao:string;
+    localizacao:string
 
     definirLocalizacao():void
     obterLocalizacao():string
