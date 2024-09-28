@@ -1,6 +1,6 @@
-import { Biblioteca } from './models/Biblioteca';
+import { Biblioteca } from './models/Biblioteca'
 
-const biblioteca = new Biblioteca();
+const biblioteca = new Biblioteca()
 biblioteca.Menu()
 
 

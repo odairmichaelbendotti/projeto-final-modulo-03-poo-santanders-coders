@@ -5,8 +5,20 @@ const AItemAcervo_1 = require("../abstractclass/AItemAcervo");
 class Midia extends AItemAcervo_1.ItemAcervo {
     constructor(anoPublicacao, titulo, duracao) {
         super(anoPublicacao, titulo);
-        this.duracao = 0;
+        this.duracao = '';
+        this.localizacao = "";
         this.duracao = duracao;
+    }
+    definirLocalizacao() {
+        if (this.disponiblidade) {
+            this.localizacao = "";
+        }
+        else {
+            this.localizacao = "Emprestado";
+        }
+    }
+    obterLocalizacao() {
+        return this.localizacao;
     }
 }
 exports.Midia = Midia;
