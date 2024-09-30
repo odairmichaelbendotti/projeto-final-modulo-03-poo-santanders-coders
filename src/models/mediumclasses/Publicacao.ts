@@ -16,12 +16,7 @@ export class Publicacao extends ItemAcervo implements Localizavel{
         }else{
             this.localizacao = ("indisponivel")
         }
-    }
-
-    obterLocalizacao():string{
-        return this.localizacao
-    }
-    
+    } 
     
 }
 

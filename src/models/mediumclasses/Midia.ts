@@ -16,8 +16,4 @@ export class Midia extends ItemAcervo implements Localizavel{
             this.localizacao = "Emprestado"
         }
     }
-
-    obterLocalizacao():string{
-        return this.localizacao
-    }
 }

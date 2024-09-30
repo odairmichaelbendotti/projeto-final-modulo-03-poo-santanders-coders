@@ -17,8 +17,5 @@ class Publicacao extends AItemAcervo_1.ItemAcervo {
             this.localizacao = ("indisponivel");
         }
     }
-    obterLocalizacao() {
-        return this.localizacao;
-    }
 }
 exports.Publicacao = Publicacao;
