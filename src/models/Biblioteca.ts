@@ -231,7 +231,7 @@ Sua opcao: `)
     removerItem(): void {
         const idRemover = prompt.questionInt(`Digite o ID do item que voce deseja remover: `)
         const itemRemover = this.acervo.find(item => item.id === idRemover)
-        if(itemRemover){
+        if(itemRemover && itemRemover.disponiblidade){
             this.acervo = this.acervo.filter(item => item.id !== idRemover)
             console.log(`\nItem ${itemRemover.titulo} foi removido do acervo\n`)
         }else{
