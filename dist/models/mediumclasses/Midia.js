@@ -17,8 +17,5 @@ class Midia extends AItemAcervo_1.ItemAcervo {
             this.localizacao = "Emprestado";
         }
     }
-    obterLocalizacao() {
-        return this.localizacao;
-    }
 }
 exports.Midia = Midia;
