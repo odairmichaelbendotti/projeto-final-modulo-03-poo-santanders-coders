@@ -47,3 +47,9 @@ Este projeto consiste em desenvolver uma aplicação web que simula o sistema de
 
 Implementação para garantir o funcionamento correto do sistema, incluindo validação de disponibilidade de itens.
 
+
+
+# Como Rodar
+
+Abra o terminal na pasta raiz do projeto e digite `node .\dist\index.js`
+
